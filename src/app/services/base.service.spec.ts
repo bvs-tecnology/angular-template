@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { of, throwError } from 'rxjs';
-import { BaseResponse } from './models/base.response';
+import { BaseResponse } from '@models/base.response';
 
 export class BaseServiceTest {
 	setup(_providers: unknown[] = []) {
