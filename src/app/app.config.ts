@@ -5,7 +5,7 @@ import { routes } from './app.routes';
 import { provideCustomAppTitle } from './app.title';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { tokenInterceptor } from '@core/security/token.interceptor';
-import { initializeKeycloak } from './services/auth.service';
+import { initializeKeycloak } from '@core/core-services/auth.service';
 
 export const appConfig: ApplicationConfig = {
 	providers: [
