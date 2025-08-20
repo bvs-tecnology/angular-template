@@ -1,9 +1,9 @@
 export const environment = {
 	production: false,
-	apiUrl: 'https://localhost:5000',
+	apiUrl: 'http://localhost:5000',
 	keycloak: {
-		url: 'http://localhost:5430/',
-		realm: 'Template',
+		url: 'https://keycloak.bvsilva.com/auth',
+		realm: 'development',
 		clientId: 'template',
-	}
+	},
 };
