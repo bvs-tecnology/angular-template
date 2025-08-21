@@ -1,0 +1,15 @@
+:host {
+  width: -webkit-fill-available;
+  max-height: -webkit-fill-available;
+  height: 100vh;
+  &.main-layout {
+    display: flex;
+  }
+}
+
+.layout-sidebar {
+  background: red;
+  height: 100%;
+  width: 13rem;
+  padding: 1rem;
+}
