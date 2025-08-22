@@ -1,4 +1,7 @@
 {
+  "title": {
+    "home": "Home"
+  },
   "layout": {
     "menu": {
       "create": "Create",

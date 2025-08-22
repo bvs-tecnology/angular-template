@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { BaseService } from '../base.service';
 import { environment } from '../../../environments/environment';
+import { ITestService } from '@interfaces/test.service.interface';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TestService extends BaseService {
+export class TestService extends BaseService implements ITestService {
 	constructor() {
 		super(environment.apiUrl, 'test');
 	}
@@ -22,3 +23,5 @@ export class TestService extends BaseService {
 		return await this.GetAsync<object>('authorize');
 	}
 }
+
+export const testServiceProvider = { provide: ITestService, useExisting: TestService };

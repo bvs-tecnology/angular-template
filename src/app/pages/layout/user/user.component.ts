@@ -41,10 +41,6 @@ export class UserComponent {
 		return label.toUpperCase();
 	});
 
-	constructor() {
-		console.log(this.user());
-	}
-
 	toggleActions(event: MouseEvent) {
 		this.actions()?.toggle(event);
 	}
