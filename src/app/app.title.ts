@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
-import { AppTitleService } from '@core/core-services/app-title.service';
+import { AppTitleService } from './services/app-title/app-title.service';
 
 @Injectable()
 export class AppTitle extends TitleStrategy {

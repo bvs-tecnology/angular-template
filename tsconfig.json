@@ -23,6 +23,8 @@
 		"paths": {
 			"@core/*": ["./src/app/core/*"],
 			"@pages/*": ["./src/app/pages/*"],
+			"@interfaces/*": ["./src/app/interfaces/*"],
+			"@services/*": ["./src/app/services/*"],
 			"@helpers/*": ["./src/app/shared/helpers/*"],
 			"@validators/*": ["./src/app/shared/validators/*"],
 			"@models/*": ["./src/app/models/*"],

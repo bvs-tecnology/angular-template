@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@mixin base-font {
+	font-family: 'Inter', sans-serif;
+	font-optical-sizing: auto;
+	font-style: normal;
+	padding: 0;
+	margin: 0;
+}
+
+@mixin base-headline {
+	@include base-font;
+	line-height: 1.5;
+	letter-spacing: 0.18px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	flex: 1;
+}
+
+@mixin headline_1 {
+	font-size: 1.125rem;
+	font-weight: 600;
+	@include base-headline;
+}
+@mixin headline_2 {
+	font-size: 1.125rem;
+	font-weight: 400;
+	@include base-headline;
+}
+@mixin headline_3 {
+	font-size: 1rem;
+	font-weight: 600;
+	@include base-headline;
+}
+@mixin headline_4 {
+	font-size: 1rem;
+	font-weight: 400;
+	@include base-headline;
+}
+@mixin headline_5 {
+	font-size: 1rem;
+	font-weight: 400;
+	@include base-headline;
+}
+
+@mixin base-subtitle {
+	@include base-font;
+	color: var(--p-card-subtitle-color);
+	font-weight: 400;
+	line-height: 1.5;
+}
+@mixin subtitle_1 {
+	font-size: 1rem;
+	letter-spacing: 0.15px;
+	@include base-subtitle;
+}
+@mixin subtitle_2 {
+	font-size: 1rem;
+	@include base-subtitle;
+}
+@mixin subtitle_3 {
+	font-size: 0.875rem;
+	@include base-subtitle;
+}
+
+@mixin base-body {
+	@include base-font;
+	font-weight: 400;
+	line-height: 1.5;
+	letter-spacing: 0.25px;
+}
+@mixin body_1 {
+	font-size: 0.75rem;
+	@include base-body;
+}
+@mixin body_2 {
+	font-size: 0.625rem;
+	@include base-body;
+}
+@mixin body_3 {
+	font-size: 0.625rem;
+	@include base-body;
+}
+@mixin bold_body_1 {
+	@include body_1;
+	font-weight: 600;
+}
+@mixin bold_body_2 {
+	@include body_2;
+	font-weight: 600;
+}
+@mixin bold_body_3 {
+	@include body_3;
+	font-weight: 600;
+}
+
+@mixin caption {
+	@include base-font;
+	color: var(--p-card-subtitle-color);
+	font-size: 0.625rem;
+	line-height: 1.5;
+	letter-spacing: 0.4px;
+}
+
+@mixin overline {
+	@include base-font;
+	font-size: 0.5rem;
+	line-height: 1.5;
+}
+
+@mixin link {
+	@include base-font;
+	font-size: 0.75rem;
+	line-height: 1.25;
+	letter-spacing: 0.25px;
+}
+
+@mixin button {
+	@include base-font;
+	text-transform: uppercase;
+}
+
+h1 {
+	@include headline_1;
+}
+h2 {
+	@include headline_2;
+}
+h3 {
+	@include headline_3;
+}
+h4 {
+	@include headline_4;
+}
+h5 {
+	@include headline_5;
+}
+
+.subtitle-1 {
+	@include subtitle_1;
+}
+.subtitle-2 {
+	@include subtitle_2;
+}
+.subtitle-3 {
+	@include subtitle_3;
+}
+
+.body-1 {
+	@include body_1;
+}
+.body-2 {
+	@include body_2;
+}
+.body-3 {
+	@include body_3;
+}
+.bold-body-1 {
+	@include bold_body_1;
+}
+.bold-body-2 {
+	@include bold_body_2;
+}
+.bold-body-3 {
+	@include bold_body_3;
+}
+
+.caption {
+	@include caption;
+}
+.overline {
+	@include overline;
+}
+.link {
+	@include link;
+}
+
+p,
+span,
+div,
+li,
+td,
+label {
+	@include body_1;
+}
+
+a {
+	@include link;
+}
+
+th {
+	@include subtitle_1;
+}
+
+button {
+	@include button;
+}

@@ -1,7 +1,28 @@
 <aside class="layout-sidebar">
-  <app-user />
+  <div class="layout-sidebar__header">
+    <p-button icon="pi pi-bars" text severity="secondary" size="small" (click)="toggleSidebar()" />
+  </div>
+
+  <div class="layout-sidebar__menu">
+    <p-panel-menu [model]="sidebarOpen() ? menuItems : menuItemsClose()">
+      <ng-template #item let-item>
+        <a class="p-panelmenu-header-link" [class.only-icon]="!sidebarOpen()">
+          @if (item.icon) {
+            <i class="p-panelmenu-header-icon {{ item.icon }}"></i>
+          }
+          @if (item.label) {
+            <span class="p-panelmenu-header-label">{{ item.label | translate }}</span>
+          }
+        </a>
+      </ng-template>
+    </p-panel-menu>
+  </div>
+
+  <div class="spacer"></div>
+  <p-divider class="divider" />
+  <app-user [showAll]="sidebarOpen()" />
 </aside>
 
-<div>
+<div class="layout-main">
   <router-outlet />
 </div>

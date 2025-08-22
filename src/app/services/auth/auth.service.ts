@@ -1,11 +1,12 @@
-import { APP_INITIALIZER, inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import Keycloak, { KeycloakProfile, KeycloakTokenParsed } from 'keycloak-js';
 import { environment } from '../../../environments/environment';
+import { IAuthService } from '@interfaces/auth.service.interface';
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements IAuthService {
 
 	private keycloak: Keycloak;
 	private profile = signal<KeycloakProfile | undefined>(undefined);
@@ -56,3 +57,5 @@ export async function initializeKeycloak() {
 	const authService = inject(AuthService);
 	await authService.init();
 }
+
+export const authServiceProvider = { provide: IAuthService, useExisting: AuthService };

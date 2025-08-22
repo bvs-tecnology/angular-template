@@ -8,8 +8,32 @@
 }
 
 .layout-sidebar {
-  background: red;
   height: 100%;
-  width: 13rem;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .divider {
+    margin: 0;
+  }
+
+  .layout-sidebar__header {
+    width: -webkit-fill-available;
+    display: flex;
+    align-items: start;
+    padding: .4rem;
+  }
+
+  .layout-sidebar__menu {
+    padding: .4rem;
+  }
+}
+
+.layout-main {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  background: #1e1e1e;
 }

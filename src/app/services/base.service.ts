@@ -8,8 +8,10 @@ import { lastValueFrom, Observable } from 'rxjs';
 	providedIn: 'root',
 })
 export abstract class BaseService {
-	private url = '';
-	private http: HttpClient = inject(HttpClient);
+
+	private readonly url;
+	private readonly http: HttpClient = inject(HttpClient);
+
 	constructor(url: string, controller: string) {
 		this.url = `${url}/api/${controller}`;
 	}

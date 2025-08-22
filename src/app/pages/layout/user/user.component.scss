@@ -1,0 +1,26 @@
+:host {
+  &.user-card {
+    display: flex;
+    align-items: center;
+    border-radius: .5rem;
+    padding: .5rem .5rem;
+    margin: .4rem;
+
+    &__show-all {
+      gap: .5rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    &__open-actions {
+      background: rgba(255, 255, 255, 0.05) !important;
+    }
+  }
+}
+
+.user-avatar {
+  aspect-ratio: 1/1
+}

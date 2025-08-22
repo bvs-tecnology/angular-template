@@ -1,1 +1,12 @@
-{}
+{
+  "layout": {
+    "menu": {
+      "create": "Criar",
+      "search": "Buscar",
+      "gallery": "Galeria"
+    },
+    "actions": {
+      "logout": "Sair"
+    }
+  }
+}
