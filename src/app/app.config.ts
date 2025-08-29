@@ -28,7 +28,12 @@ export const appConfig: ApplicationConfig = {
 		provideAppInitializer(initializeKeycloak),
 		provideAnimationsAsync(),
 		providePrimeNG({
-			theme: { preset: Aura }
+			theme: {
+				preset: Aura,
+				options: {
+					darkModeSelector: '.dark-mode'
+				}
+			},
 		}),
 		provideServices()
 	],

@@ -1,6 +1,7 @@
 <aside class="layout-sidebar">
   <div class="layout-sidebar__header">
-    <p-button icon="pi pi-bars" text severity="secondary" size="small" (click)="toggleSidebar()" />
+    <img class="layout-sidebar__logo" [class.hide-on-hover]="!sidebarOpen()" src="assets/svgs/logo_dark.svg" alt="logo" [routerLink]="'/'" />
+    <p-button [class.show-on-hover]="!sidebarOpen()" icon="pi pi-bars" text severity="secondary" size="small" (click)="toggleSidebar()" />
   </div>
 
   <div class="layout-sidebar__menu">

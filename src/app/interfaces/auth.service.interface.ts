@@ -4,7 +4,9 @@ import { Signal } from '@angular/core';
 export abstract class IAuthService {
 	abstract readonly profile$: Signal<KeycloakProfile | undefined>;
 	abstract readonly tokenParsed$: Signal<KeycloakTokenParsed | undefined>;
+	abstract readonly isAuthenticated$: Signal<boolean>;
 
 	abstract getToken(): string | null;
-	abstract logout(): void
+	abstract logout(): Promise<void>;
+	abstract login(): Promise<void>;
 }

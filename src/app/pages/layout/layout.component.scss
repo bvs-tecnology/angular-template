@@ -24,7 +24,37 @@
     width: -webkit-fill-available;
     display: flex;
     align-items: start;
+    justify-content: space-between;
     padding: .4rem;
+
+    p-button {
+      margin: 6.5px 8px;
+    }
+    p-button.show-on-hover {
+      display: none;
+    }
+
+    .layout-sidebar__logo {
+      user-select: none;
+      width: 40px;
+      margin: 4px;
+      border-radius: .5rem;
+      &:hover {
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.1);
+      }
+    }
+  }
+
+  &:hover {
+    .layout-sidebar__header {
+      img.hide-on-hover {
+        display: none;
+      }
+      p-button.show-on-hover {
+        display: block;
+      }
+    }
   }
 
   .layout-sidebar__menu {

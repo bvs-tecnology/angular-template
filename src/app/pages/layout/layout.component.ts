@@ -1,5 +1,5 @@
 import { Component, computed, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { UserComponent } from '@pages/layout/user/user.component';
 import { Divider } from 'primeng/divider';
 import { Button } from 'primeng/button';
@@ -9,7 +9,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-layout',
-	imports: [RouterOutlet, UserComponent, Divider, Button, PanelMenu, TranslatePipe],
+	imports: [RouterOutlet, UserComponent, Divider, Button, PanelMenu, TranslatePipe, RouterLink],
 	templateUrl: './layout.component.html',
 	styleUrl: './layout.component.scss',
 	host: {

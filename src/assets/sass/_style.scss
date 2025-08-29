@@ -1,6 +1,10 @@
 @use 'tailwindcss';
 @use 'typography';
 
+:root {
+  --p-divider-content-background: #121212 !important;
+}
+
 .p-panelmenu {
   gap: .2rem !important;
   .p-panelmenu-panel {
