@@ -43,7 +43,7 @@ export class AuthService implements IAuthService {
 				redirectUri: 'http://localhost:4200/',
 				token: this.token$(),
 				refreshToken: this.refreshToken$(),
-				idToken: this.idToken$()
+				idToken: this.idToken$(),
 			})
 			.then(async authenticated => {
 				if (authenticated) await this.setAuthData();
@@ -80,8 +80,8 @@ export class AuthService implements IAuthService {
 }
 
 export async function initializeKeycloak() {
-  const authService = inject(AuthService);
-  await authService.init();
+	const authService = inject(AuthService);
+	await authService.init();
 }
 
 export const authServiceProvider = { provide: IAuthService, useExisting: AuthService };

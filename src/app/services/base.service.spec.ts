@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 import { of, throwError } from 'rxjs';
-import { BaseResponse } from '@models/base.response';
+import { ErrorResponse } from '@models/error-response';
 
 export class BaseServiceTest {
 	setup(_providers: unknown[] = []) {
@@ -12,7 +12,7 @@ export class BaseServiceTest {
 
 	mockHttpSuccess<T>(result: T | null = null) {
 		const httpClient: HttpClient = TestBed.inject(HttpClient);
-		const successResponse: BaseResponse<unknown> = { success: true, errors: [], result: result };
+		const successResponse: unknown = result;
 		spyOn(httpClient, 'get').and.returnValue(of(successResponse));
 		spyOn(httpClient, 'post').and.returnValue(of(successResponse));
 		spyOn(httpClient, 'put').and.returnValue(of(successResponse));
@@ -22,7 +22,7 @@ export class BaseServiceTest {
 
 	mockHttpError() {
 		const httpClient: HttpClient = TestBed.inject(HttpClient);
-		const errorResponse: BaseResponse<unknown> = { success: false, errors: ['mock error'], result: null };
+		const errorResponse: ErrorResponse = { errors: ['mocked error'] };
 		const error = { status: 500, statusText: 'Internal Server Error', error: errorResponse };
 		spyOn(httpClient, 'get').and.returnValue(throwError(() => error));
 		spyOn(httpClient, 'post').and.returnValue(throwError(() => error));

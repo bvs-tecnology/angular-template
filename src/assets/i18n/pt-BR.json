@@ -1,15 +1,18 @@
 {
-  "title": {
-    "home": "Home"
-  },
-  "layout": {
-    "menu": {
-      "create": "Criar",
-      "search": "Buscar",
-      "gallery": "Galeria"
-    },
-    "actions": {
-      "logout": "Sair"
-    }
-  }
+	"title": {
+		"home": "Home"
+	},
+	"layout": {
+		"menu": {
+			"create": "Criar",
+			"search": "Buscar",
+			"gallery": "Galeria"
+		},
+		"actions": {
+			"logout": "Sair"
+		}
+	},
+	"confirmation": {
+		"update-app": "Uma nova versão está disponível. Gostaria de atualizar?"
+	}
 }

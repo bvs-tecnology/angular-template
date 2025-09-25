@@ -3,7 +3,7 @@ import { IAuthService } from '@interfaces/auth.service.interface';
 import { Avatar } from 'primeng/avatar';
 import { Menu } from 'primeng/menu';
 import { MenuItem } from 'primeng/api';
-import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-user',
@@ -19,7 +19,6 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 })
 export class UserComponent {
 	private readonly _authService: IAuthService = inject(IAuthService);
-	private readonly _translate: TranslateService = inject(TranslateService);
 
 	public showAll = input.required<boolean>();
 

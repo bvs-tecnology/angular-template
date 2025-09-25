@@ -2,19 +2,19 @@
 @use 'typography';
 
 :root {
-  --p-divider-content-background: #121212 !important;
+	--p-divider-content-background: #121212 !important;
 }
 
 .p-panelmenu {
-  gap: .2rem !important;
-  .p-panelmenu-panel {
-    border: none;
-    background: none;
-    padding: 0 !important;
-  }
-  .p-panelmenu-header-link {
-    &.only-icon {
-      justify-content: center;
-    }
-  }
+	gap: 0.2rem !important;
+	.p-panelmenu-panel {
+		border: none;
+		background: none;
+		padding: 0 !important;
+	}
+	.p-panelmenu-header-link {
+		&.only-icon {
+			justify-content: center;
+		}
+	}
 }

@@ -1,12 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
 import { AppTitleService, MAIN_TITLE } from './app-title.service';
+import { provideTranslateService } from '@ngx-translate/core';
 
 describe('AppTitleService', () => {
 	let service: AppTitleService;
 
 	beforeEach(() => {
-		TestBed.configureTestingModule({});
+		TestBed.configureTestingModule({
+			providers: [provideTranslateService()],
+		});
 		service = TestBed.inject(AppTitleService);
 	});
 
@@ -15,7 +18,7 @@ describe('AppTitleService', () => {
 	});
 
 	describe('on defined title', () => {
-		const title = 'Test Title';
+		const title = 'mocked';
 		beforeEach(() => service.setTitle(title));
 
 		it('should return the title', () => expect(service.title()).toBe(`${MAIN_TITLE} - ${title}`));

@@ -1,15 +1,18 @@
 {
-  "title": {
-    "home": "Home"
-  },
-  "layout": {
-    "menu": {
-      "create": "Create",
-      "search": "Search",
-      "gallery": "Gallery"
-    },
-    "actions": {
-      "logout": "Logout"
-    }
-  }
+	"title": {
+		"home": "Home"
+	},
+	"layout": {
+		"menu": {
+			"create": "Create",
+			"search": "Search",
+			"gallery": "Gallery"
+		},
+		"actions": {
+			"logout": "Logout"
+		}
+	},
+	"confirmation": {
+		"update-app": "A new version is available. Would you like to update?"
+	}
 }

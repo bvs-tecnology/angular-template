@@ -1,69 +1,69 @@
 :host {
-  width: -webkit-fill-available;
-  max-height: -webkit-fill-available;
-  height: 100vh;
-  &.main-layout {
-    display: flex;
-  }
+	width: -webkit-fill-available;
+	max-height: -webkit-fill-available;
+	height: 100vh;
+	&.main-layout {
+		display: flex;
+	}
 }
 
 .layout-sidebar {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 
-  .spacer {
-    flex: 1 1 auto;
-  }
+	.spacer {
+		flex: 1 1 auto;
+	}
 
-  .divider {
-    margin: 0;
-  }
+	.divider {
+		margin: 0;
+	}
 
-  .layout-sidebar__header {
-    width: -webkit-fill-available;
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    padding: .4rem;
+	.layout-sidebar__header {
+		width: -webkit-fill-available;
+		display: flex;
+		align-items: start;
+		justify-content: space-between;
+		padding: 0.4rem;
 
-    p-button {
-      margin: 6.5px 8px;
-    }
-    p-button.show-on-hover {
-      display: none;
-    }
+		p-button {
+			margin: 6.5px 8px;
+		}
+		p-button.show-on-hover {
+			display: none;
+		}
 
-    .layout-sidebar__logo {
-      user-select: none;
-      width: 40px;
-      margin: 4px;
-      border-radius: .5rem;
-      &:hover {
-        cursor: pointer;
-        background: rgba(255, 255, 255, 0.1);
-      }
-    }
-  }
+		.layout-sidebar__logo {
+			user-select: none;
+			width: 40px;
+			margin: 4px;
+			border-radius: 0.5rem;
+			&:hover {
+				cursor: pointer;
+				background: rgba(255, 255, 255, 0.1);
+			}
+		}
+	}
 
-  &:hover {
-    .layout-sidebar__header {
-      img.hide-on-hover {
-        display: none;
-      }
-      p-button.show-on-hover {
-        display: block;
-      }
-    }
-  }
+	&:hover {
+		.layout-sidebar__header {
+			img.hide-on-hover {
+				display: none;
+			}
+			p-button.show-on-hover {
+				display: block;
+			}
+		}
+	}
 
-  .layout-sidebar__menu {
-    padding: .4rem;
-  }
+	.layout-sidebar__menu {
+		padding: 0.4rem;
+	}
 }
 
 .layout-main {
-  width: -webkit-fill-available;
-  height: -webkit-fill-available;
-  background: #1e1e1e;
+	width: -webkit-fill-available;
+	height: -webkit-fill-available;
+	background: #1e1e1e;
 }

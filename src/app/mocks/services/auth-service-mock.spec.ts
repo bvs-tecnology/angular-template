@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { Injectable, signal } from '@angular/core';
 import { KeycloakProfile, KeycloakTokenParsed } from 'keycloak-js';
 import { IAuthService } from '@interfaces/auth.service.interface';
@@ -10,13 +11,15 @@ export class AuthServiceMock implements IAuthService {
 		username: 'mock',
 		firstName: 'mocked',
 		lastName: 'user',
-		email: 'mocked@email.com'
+		email: 'mocked@email.com',
 	});
-	public profile$ = this.profile.asReadonly();
+	public readonly profile$ = this.profile.asReadonly();
+	private isAuthenticated = signal<boolean>(true);
+	public readonly isAuthenticated$ = this.isAuthenticated.asReadonly();
 	private tokenParsed = signal<KeycloakTokenParsed | undefined>({
-		token: 'mocked'
+		token: 'mocked',
 	});
-	public tokenParsed$ = this.tokenParsed.asReadonly();
+	public readonly tokenParsed$ = this.tokenParsed.asReadonly();
 
 	public async init(): Promise<boolean> {
 		return Promise.resolve(true);
@@ -26,7 +29,9 @@ export class AuthServiceMock implements IAuthService {
 		return 'mock.token';
 	}
 
-	public logout(): void {}
+	public async logout(): Promise<void> {}
+
+	public async login(): Promise<void> {}
 }
 
 export const authServiceProviderMock = { provide: IAuthService, useExisting: AuthServiceMock };

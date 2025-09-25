@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideAppInitializer, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, provideAppInitializer, provideZoneChangeDetection, isDevMode } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideCustomAppTitle } from './app.title';
@@ -11,30 +11,37 @@ import Aura from '@primeuix/themes/aura';
 import { provideServices } from '@services/service.provider';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideTranslateService } from '@ngx-translate/core';
+import { provideServiceWorker } from '@angular/service-worker';
+import { initializePwa } from '@services/pwa-config/pwa-config.service';
+import { MessageService } from 'primeng/api';
 
 export const appConfig: ApplicationConfig = {
 	providers: [
 		provideZoneChangeDetection({ eventCoalescing: true }),
 		provideRouter(routes),
 		provideCustomAppTitle(),
-		provideHttpClient(
-			withInterceptors([tokenInterceptor])
-		),
+		provideHttpClient(withInterceptors([tokenInterceptor])),
 		provideTranslateService({
 			loader: provideTranslateHttpLoader(),
-			fallbackLang: "en-US",
-			lang: navigator.language
+			fallbackLang: 'en-US',
+			lang: navigator.language,
 		}),
-		provideAppInitializer(initializeKeycloak),
 		provideAnimationsAsync(),
 		providePrimeNG({
 			theme: {
 				preset: Aura,
 				options: {
-					darkModeSelector: '.dark-mode'
-				}
+					darkModeSelector: '.dark-mode',
+				},
 			},
 		}),
-		provideServices()
+		provideServices(),
+		provideServiceWorker('ngsw-worker.js', {
+			enabled: !isDevMode(),
+			registrationStrategy: 'registerWhenStable:30000',
+		}),
+		provideAppInitializer(initializeKeycloak),
+		provideAppInitializer(initializePwa),
+		MessageService,
 	],
 };

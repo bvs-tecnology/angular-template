@@ -5,4 +5,5 @@ export const environment = {
 		realm: 'development',
 		clientId: 'template',
 	},
+	pushPublicKey: '',
 };

@@ -17,7 +17,6 @@ export class AppTitleService {
 		if (title) {
 			const translated = await lastValueFrom(this._translate.get(title));
 			this._title.set(`${MAIN_TITLE} - ${translated}`);
-		}
-		else this._title.set(MAIN_TITLE);
+		} else this._title.set(MAIN_TITLE);
 	}
 }

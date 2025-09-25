@@ -7,4 +7,5 @@ export const environment = {
 		realm: 'development',
 		clientId: 'template',
 	},
+	pushPublicKey: 'BESkM2nAGlVkbo04Hn-Y6s2LhNWxMPn_3wdLscRVZmzn3ZWgNuzZQl4UpLYeQFQM0krZWhKqv_qoRbkyLryIEjs',
 };

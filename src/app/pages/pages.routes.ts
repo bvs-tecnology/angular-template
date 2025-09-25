@@ -3,5 +3,6 @@ import { HomeComponent } from '@pages/home/home.component';
 
 export const routes: Routes = [
 	{ path: '', component: HomeComponent, title: 'title.home' },
-	{ path: '**', redirectTo: '' }
+	{ path: 'test', component: HomeComponent, title: 'title.test' },
+	{ path: '**', redirectTo: '' },
 ];

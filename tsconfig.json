@@ -28,6 +28,7 @@
 			"@helpers/*": ["./src/app/shared/helpers/*"],
 			"@validators/*": ["./src/app/shared/validators/*"],
 			"@models/*": ["./src/app/models/*"],
+			"@mocks/*": ["./src/app/mocks/*"],
 			"@shared/*": ["./src/app/shared/*"]
 		}
 	},
