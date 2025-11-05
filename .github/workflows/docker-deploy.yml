@@ -27,7 +27,7 @@ jobs:
     runs-on:
       - self-hosted
     environment: ${{ github.base_ref == 'main' && 'PRD' || 'DEV' }}
-    
+
     steps:
       - name: Login to Docker Hub
         run: |
