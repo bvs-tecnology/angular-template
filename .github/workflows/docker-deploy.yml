@@ -51,7 +51,7 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: BUILD_COMMAND=npm run ${{ vars.BUILD_COMMAND }}
+          build-args: BUILD_COMMAND=npx ng build --configuration ${{ vars.BUILD_CONFIGURATION }}
 
       - name: Deploy container locally
         run: |
