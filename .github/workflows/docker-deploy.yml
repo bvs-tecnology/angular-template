@@ -51,7 +51,8 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-          build-args: BUILD_COMMAND=npx ng build --configuration ${{ vars.BUILD_CONFIGURATION }}
+          build-args: BUILD_COMMAND=${{ vars.BUILD_COMMAND }}
+          # build-args: BUILD_COMMAND=npx ng build --configuration ${{ vars.BUILD_CONFIGURATION }}
 
       - name: Deploy container locally
         run: |
@@ -62,4 +63,5 @@ jobs:
             --name ${{ vars.DOCKER_NAME }} \
             --network ${{ vars.DOCKER_NETWORK }} \
             -p 4000:80 \
+            --restart unless-stopped
             ${{ vars.DOCKERHUB_LOGIN }}/${{ vars.DOCKER_NAME }}:${{ github.ref_name }}

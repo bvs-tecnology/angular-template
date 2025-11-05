@@ -1,11 +1,10 @@
 FROM node:22 as build
 WORKDIR /app
 COPY package*.json ./
-RUN npm install -g npm@11.6.2
 RUN npm install
 COPY . .
 
-ARG BUILD_COMMAND=npm run build
+ARG BUILD_COMMAND=npm run build:dev
 RUN $BUILD_COMMAND
 
 FROM nginx:latest
