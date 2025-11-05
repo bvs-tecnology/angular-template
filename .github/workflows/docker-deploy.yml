@@ -63,5 +63,5 @@ jobs:
             --name ${{ vars.DOCKER_NAME }} \
             --network ${{ vars.DOCKER_NETWORK }} \
             -p 4000:80 \
-            --restart unless-stopped
+            --restart unless-stopped \
             ${{ vars.DOCKERHUB_LOGIN }}/${{ vars.DOCKER_NAME }}:${{ github.ref_name }}
