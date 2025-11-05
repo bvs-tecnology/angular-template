@@ -1,7 +1,7 @@
 FROM node:20.14.0 as build
 WORKDIR /app
 COPY package*.json ./
-RUN npm install -g npm@10.7.0
+RUN npm install -g npm@11.6.2
 COPY . .
 
 ARG BUILD_COMMAND=npm run build
