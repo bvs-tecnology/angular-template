@@ -2,6 +2,7 @@ FROM node:22 as build
 WORKDIR /app
 COPY package*.json ./
 RUN npm install -g npm@11.6.2
+RUN npm install -g @angular/cli
 COPY . .
 
 ARG BUILD_COMMAND=npm run build
