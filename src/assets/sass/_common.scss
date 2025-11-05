@@ -2,21 +2,21 @@ $mobile: global 500px;
 $tablet: global 1200px;
 
 @mixin fill-available-width {
-  width: -webkit-fill-available;
+	width: -webkit-fill-available;
 }
 @mixin fill-available-height {
-  height: -webkit-fill-available;
+	height: -webkit-fill-available;
 }
 @mixin fill-available {
-  @include fill-available-width;
-  @include fill-available-height;
+	@include fill-available-width;
+	@include fill-available-height;
 }
 
 @mixin display-flex-column {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 @mixin display-flex-row {
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 }

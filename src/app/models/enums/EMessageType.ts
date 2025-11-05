@@ -1,5 +1,5 @@
 export enum EMessageType {
 	Other,
 	Automation,
-	WordPress
+	WordPress,
 }

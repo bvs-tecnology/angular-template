@@ -12,7 +12,6 @@ import { provideServices } from '@services/service.provider';
 import { provideTranslateHttpLoader } from '@ngx-translate/http-loader';
 import { provideTranslateService } from '@ngx-translate/core';
 import { provideServiceWorker } from '@angular/service-worker';
-import { initializePwa } from '@services/pwa-config/pwa-config.service';
 import { MessageService } from 'primeng/api';
 import { provideEnvironmentNgxMask } from 'ngx-mask';
 
@@ -47,7 +46,7 @@ export const appConfig: ApplicationConfig = {
 			registrationStrategy: 'registerWhenStable:30000',
 		}),
 		provideAppInitializer(initializeKeycloak),
-		provideAppInitializer(initializePwa),
+		// provideAppInitializer(initializePwa),
 		MessageService,
 	],
 };

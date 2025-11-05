@@ -25,7 +25,6 @@ export class UserComponent {
 
 	protected actions = viewChild<Menu>('actions');
 	protected actionItems: Signal<MenuItem[] | undefined> = computed(() => {
-
 		return this._authService.isAuthenticated$()
 			? [
 					{
@@ -39,13 +38,13 @@ export class UserComponent {
 
 	protected user = this._authService.profile$;
 	protected userLabel = computed(() => {
-		if (!this.user()) return this._translateService.instant("layout.gu");
+		if (!this.user()) return this._translateService.instant('layout.gu');
 		const label = `${this.user()?.firstName?.substring(0, 1)}${this.user()?.lastName?.substring(0, 1)}`;
 		return label.toUpperCase();
 	});
 
 	toggleActions(event: MouseEvent) {
-		if (this._authService.isAuthenticated$())	this.actions()?.toggle(event);
+		if (this._authService.isAuthenticated$()) this.actions()?.toggle(event);
 		else this._authService.login();
 	}
 }

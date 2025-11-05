@@ -8,7 +8,6 @@ import { environment } from '../../../environments/environment';
 	providedIn: 'root',
 })
 export class MessagesService extends BaseService implements IMessagesService {
-
 	constructor() {
 		super(environment.apiUrl, 'messages');
 	}
@@ -16,7 +15,6 @@ export class MessagesService extends BaseService implements IMessagesService {
 	async DiscordMessage(request: DiscordMessageRequest): Promise<void> {
 		return await this.PostAsync<void>('discord-message', request);
 	}
-
 }
 
 export const messagesServiceProvider = { provide: IMessagesService, useExisting: MessagesService };

@@ -24,12 +24,12 @@ export class LayoutColumnComponent implements OnInit {
 			{
 				label: this.translateService.instant('layout.menu.home'),
 				icon: 'pi pi-home',
-				command: () => this.goToPage([''])
+				command: () => this.goToPage(['']),
 			},
 			{
 				label: this.translateService.instant('layout.menu.contact'),
 				icon: 'pi pi-user',
-				command: () => this.goToPage(['contact'])
+				command: () => this.goToPage(['contact']),
 			},
 			{
 				label: this.translateService.instant('layout.menu.business'),

@@ -11,7 +11,7 @@ export class ContactForm extends FormGroup<IContactForm> {
 			email: new FormControl<string>('', [Validators.required, CustomValidators.emailValidator]),
 			phone: new FormControl<string>('', [Validators.required, CustomValidators.phoneValidator]),
 			messageType: new FormControl<EMessageType>(EMessageType.Other, [Validators.required]),
-			message: new FormControl<string>('', [Validators.required, Validators.maxLength(500)])
+			message: new FormControl<string>('', [Validators.required, Validators.maxLength(500)]),
 		});
 	}
 

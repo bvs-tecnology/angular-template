@@ -1,25 +1,31 @@
-<h2>{{'contact.send-us-a-message' | translate}}</h2>
+<h2>{{ 'contact.send-us-a-message' | translate }}</h2>
 
 <form [formGroup]="form">
-  <p-float-label variant="on">
-    <input pInputText fluid id="contact-name" formControlName="name">
-    <label for="contact-name">{{ 'contact.name' | translate }}</label>
-  </p-float-label>
-  <p-float-label variant="on">
-    <input pInputText fluid id="contact-email" formControlName="email">
-    <label for="contact-email">{{ 'contact.email' | translate }}</label>
-  </p-float-label>
-  <p-float-label variant="on">
-    <input pInputText fluid id="contact-phone" formControlName="phone" mask="(00) 00000-0000||(00) 0000-0000">
-    <label for="contact-phone">{{ 'contact.phone' | translate }}</label>
-  </p-float-label>
-  <p-float-label variant="on">
-    <p-select [options]="messageTypes" optionLabel="label" optionValue="value" fluid id="message-type" formControlName="messageType" />
-    <label for="message-type">{{ 'contact.summary' | translate }}</label>
-  </p-float-label>
-  <p-float-label variant="on">
-    <textarea pInputText fluid id="contact-message" formControlName="message"></textarea>
-    <label for="contact-message">{{ 'contact.message' | translate }}</label>
-  </p-float-label>
-  <p-button fluid [label]="'contact.send' | translate" [disabled]="form.invalid" (click)="sendMessage()"/>
+	<p-float-label variant="on">
+		<input pInputText fluid id="contact-name" formControlName="name" />
+		<label for="contact-name">{{ 'contact.name' | translate }}</label>
+	</p-float-label>
+	<p-float-label variant="on">
+		<input pInputText fluid id="contact-email" formControlName="email" />
+		<label for="contact-email">{{ 'contact.email' | translate }}</label>
+	</p-float-label>
+	<p-float-label variant="on">
+		<input pInputText fluid id="contact-phone" formControlName="phone" mask="(00) 00000-0000||(00) 0000-0000" />
+		<label for="contact-phone">{{ 'contact.phone' | translate }}</label>
+	</p-float-label>
+	<p-float-label variant="on">
+		<p-select
+			[options]="messageTypes"
+			optionLabel="label"
+			optionValue="value"
+			fluid
+			id="message-type"
+			formControlName="messageType" />
+		<label for="message-type">{{ 'contact.summary' | translate }}</label>
+	</p-float-label>
+	<p-float-label variant="on">
+		<textarea pInputText fluid id="contact-message" formControlName="message"></textarea>
+		<label for="contact-message">{{ 'contact.message' | translate }}</label>
+	</p-float-label>
+	<p-button fluid [label]="'contact.send' | translate" [disabled]="form.invalid" (click)="sendMessage()" />
 </form>

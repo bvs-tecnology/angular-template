@@ -1,16 +1,16 @@
 @use '../../../assets/sass/common';
 
 :host {
-  @include common.display-flex-column;
-  align-items: center;
-  justify-content: space-evenly;
+	@include common.display-flex-column;
+	align-items: center;
+	justify-content: space-evenly;
 }
 
 @media (max-width: 1200px) {
-  :host {
-    @include common.display-flex-column;
-    align-items: center;
-  }
+	:host {
+		@include common.display-flex-column;
+		align-items: center;
+	}
 }
 
 @media (max-width: 500px) {

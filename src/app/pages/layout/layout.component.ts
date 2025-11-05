@@ -23,22 +23,22 @@ export class LayoutComponent {
 		{
 			label: 'layout.menu.home',
 			icon: 'pi pi-home',
-			command: () => this.goToPage([''])
+			command: () => this.goToPage(['']),
 		},
 		{
 			label: 'layout.menu.contact',
 			icon: 'pi pi-user',
-			command: () => this.goToPage(['contact'])
+			command: () => this.goToPage(['contact']),
 		},
 		{
 			label: 'layout.menu.business',
 			icon: 'pi pi-building',
-			command: () => this.goToPage(['business'])
+			command: () => this.goToPage(['business']),
 		},
 		{
 			label: 'layout.menu.support',
 			icon: 'pi pi-whatsapp',
-			command: () => this.goToPage(['support'])
+			command: () => this.goToPage(['support']),
 		},
 	];
 	protected menuItemsClose = computed(() => {
@@ -56,7 +56,6 @@ export class LayoutComponent {
 	}
 
 	private goToPage(path: string[]) {
-		this.router.navigate(path)
-			.finally(() => this.setSidebar(false));
+		this.router.navigate(path).finally(() => this.setSidebar(false));
 	}
 }

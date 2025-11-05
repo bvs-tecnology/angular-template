@@ -1,18 +1,17 @@
 <p-avatar class="user-avatar" [label]="userLabel()" size="normal" shape="circle" data-test="user-image" />
 
 @if (showAll()) {
-  @if (_authService.isAuthenticated$()) {
-    <div class="user-data">
-      <p class="body-1" data-test="user-name">{{ user()?.firstName }} {{ user()?.lastName }}</p>
-      <p class="caption" data-test="user-email">{{ user()?.email }}</p>
-    </div>
-  }
-  @else {
-    <div class="user-data">
-      <p class="body-1" data-test="user-name">{{ 'layout.guest-user' | translate }}</p>
-      <p class="caption" data-test="user-email">{{ 'layout.actions.click-to-enter' | translate }}</p>
-    </div>
-  }
+	@if (_authService.isAuthenticated$()) {
+		<div class="user-data">
+			<p class="body-1" data-test="user-name">{{ user()?.firstName }} {{ user()?.lastName }}</p>
+			<p class="caption" data-test="user-email">{{ user()?.email }}</p>
+		</div>
+	} @else {
+		<div class="user-data">
+			<p class="body-1" data-test="user-name">{{ 'layout.guest-user' | translate }}</p>
+			<p class="caption" data-test="user-email">{{ 'layout.actions.click-to-enter' | translate }}</p>
+		</div>
+	}
 }
 
 <p-menu #actions [model]="actionItems()" popup>

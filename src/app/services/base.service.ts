@@ -30,7 +30,7 @@ export abstract class BaseService {
 						severity: 'error',
 						summary: this.translateService.instant('toast.error'),
 						detail: value,
-						life: 2000
+						life: 2000,
 					});
 				});
 			}

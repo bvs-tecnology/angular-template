@@ -14,30 +14,30 @@
 		},
 		"actions": {
 			"logout": "Logout",
-      "click-to-enter": "Click to authenticate"
+			"click-to-enter": "Click to authenticate"
 		},
-    "guest-user": "Guest User",
-    "gu": "GU"
+		"guest-user": "Guest User",
+		"gu": "GU"
 	},
-  "contact": {
-    "name": "Name",
-    "email": "Email",
-    "phone": "Phone",
-    "summary": "Summary",
-    "message": "Message",
-    "send": "Send",
-    "send-us-a-message": "Send us a message",
-    "other-actions": "Other actions",
-    "support-email": "Support email",
-    "whatsapp": "Whatsapp",
-    "discord": "Discord",
-    "success-message": "Message successfully sent!"
-  },
+	"contact": {
+		"name": "Name",
+		"email": "Email",
+		"phone": "Phone",
+		"summary": "Summary",
+		"message": "Message",
+		"send": "Send",
+		"send-us-a-message": "Send us a message",
+		"other-actions": "Other actions",
+		"support-email": "Support email",
+		"whatsapp": "Whatsapp",
+		"discord": "Discord",
+		"success-message": "Message successfully sent!"
+	},
 	"confirmation": {
 		"update-app": "A new version is available. Would you like to update?"
 	},
-  "toast": {
-    "error": "Error",
-    "success": "Success"
-  }
+	"toast": {
+		"error": "Error",
+		"success": "Success"
+	}
 }
