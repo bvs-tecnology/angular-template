@@ -38,7 +38,7 @@ export class AuthService implements IAuthService {
 	public async init(): Promise<void> {
 		await this.keycloak
 			.init({
-				onLoad: 'login-required',
+				onLoad: 'check-sso',
 				silentCheckSsoRedirectUri: window.location.origin + '/assets/silent-check-sso.html',
 				redirectUri: 'http://localhost:4200/',
 				token: this.token$(),

@@ -2,7 +2,7 @@ import { computed, inject, Injectable, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { lastValueFrom } from 'rxjs';
 
-export const MAIN_TITLE = 'Template';
+export const MAIN_TITLE = 'BVS Tecnologia';
 
 @Injectable({
 	providedIn: 'root',
@@ -16,7 +16,7 @@ export class AppTitleService {
 	public async setTitle(title: string | undefined) {
 		if (title) {
 			const translated = await lastValueFrom(this._translate.get(title));
-			this._title.set(`${MAIN_TITLE} - ${translated}`);
+			this._title.set(`${translated} - ${MAIN_TITLE}`);
 		} else this._title.set(MAIN_TITLE);
 	}
 }

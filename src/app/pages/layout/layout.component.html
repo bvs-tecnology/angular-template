@@ -1,11 +1,10 @@
-<aside class="layout-sidebar">
+<aside class="layout-sidebar" [class.layout-sidebar--closed]="!sidebarOpen()">
 	<div class="layout-sidebar__header">
 		<img
 			class="layout-sidebar__logo"
 			[class.hide-on-hover]="!sidebarOpen()"
 			src="assets/svgs/logo_dark.svg"
-			alt="logo"
-			[routerLink]="'/'" />
+			alt="logo" />
 		<p-button
 			[class.show-on-hover]="!sidebarOpen()"
 			icon="pi pi-bars"
@@ -36,6 +35,6 @@
 	<app-user [showAll]="sidebarOpen()" />
 </aside>
 
-<div class="layout-main">
+<div class="layout-main" [class.sidebar-open]="sidebarOpen()">
 	<router-outlet />
 </div>

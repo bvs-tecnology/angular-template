@@ -1,0 +1,42 @@
+@use '../../../../assets/sass/common';
+
+@mixin base-block {
+  position: relative;
+  @include common.display-flex-column;
+  width: 780px;
+  max-width: 95vw;
+}
+
+:host {
+  @include base-block;
+  form {
+    @include common.display-flex-column;
+    gap: .5rem;
+  }
+}
+
+h2 {
+  @include common.display-flex-row;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  padding: 2rem 0;
+  &::before {
+    content: '';
+    width: 100px;
+    height: 0;
+    border: solid rgba(255, 255, 255, 0.2) 1px;
+  }
+  &::after {
+    content: '';
+    width: 100px;
+    height: 0;
+    border: solid rgba(255, 255, 255, 0.2) 1px;
+  }
+}
+
+@media (max-width: 1200px) {
+  :host {
+    max-width: calc(95vw - 60.75px);
+  }
+}

@@ -1,0 +1,48 @@
+@use '../../../assets/sass/common';
+
+:host {
+  @include common.display-flex-column;
+  @include common.fill-available;
+  min-height: 100vh;
+}
+
+.logo {
+  width: 70px;
+}
+
+.layout-main {
+  @include common.display-flex-column;
+}
+
+.footer {
+  .content {
+    @include common.display-flex-row;
+    align-items: end;
+    justify-content: space-between;
+    padding: 35px 75px;
+    margin: 0 auto;
+    max-width: 1000px;
+
+    .main-actions {
+      @include common.display-flex-column;
+      align-items: center;
+      gap: .5rem;
+
+      .actions {
+        @include common.display-flex-row;
+        gap: .5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .footer {
+    .content {
+      @include common.display-flex-column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+  }
+}

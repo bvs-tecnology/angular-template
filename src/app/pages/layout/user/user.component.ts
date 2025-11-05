@@ -3,7 +3,7 @@ import { IAuthService } from '@interfaces/auth.service.interface';
 import { Avatar } from 'primeng/avatar';
 import { Menu } from 'primeng/menu';
 import { MenuItem } from 'primeng/api';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
 	selector: 'app-user',
@@ -18,29 +18,34 @@ import { TranslatePipe } from '@ngx-translate/core';
 	},
 })
 export class UserComponent {
-	private readonly _authService: IAuthService = inject(IAuthService);
+	protected readonly _authService: IAuthService = inject(IAuthService);
+	protected readonly _translateService = inject(TranslateService);
 
 	public showAll = input.required<boolean>();
 
 	protected actions = viewChild<Menu>('actions');
 	protected actionItems: Signal<MenuItem[] | undefined> = computed(() => {
-		return [
-			{
-				label: 'layout.actions.logout',
-				icon: 'pi pi-sign-out',
-				command: () => this._authService.logout(),
-			},
-		];
+
+		return this._authService.isAuthenticated$()
+			? [
+					{
+						label: 'layout.actions.logout',
+						icon: 'pi pi-sign-out',
+						command: () => this._authService.logout(),
+					},
+				]
+			: [];
 	});
 
 	protected user = this._authService.profile$;
 	protected userLabel = computed(() => {
-		if (!this.user()) return '';
+		if (!this.user()) return this._translateService.instant("layout.gu");
 		const label = `${this.user()?.firstName?.substring(0, 1)}${this.user()?.lastName?.substring(0, 1)}`;
 		return label.toUpperCase();
 	});
 
 	toggleActions(event: MouseEvent) {
-		this.actions()?.toggle(event);
+		if (this._authService.isAuthenticated$())	this.actions()?.toggle(event);
+		else this._authService.login();
 	}
 }

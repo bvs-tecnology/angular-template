@@ -4,6 +4,7 @@ import { QueryStringHelper } from '@helpers/query-string.helper';
 import { lastValueFrom, Observable } from 'rxjs';
 import { ErrorResponse } from '@models/error-response';
 import { MessageService } from 'primeng/api';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
 	providedIn: 'root',
@@ -12,6 +13,7 @@ export abstract class BaseService {
 	protected url;
 	private readonly http: HttpClient = inject(HttpClient);
 	private readonly messageService: MessageService = inject(MessageService);
+	private readonly translateService: TranslateService = inject(TranslateService);
 
 	protected constructor(url: string, controller: string) {
 		this.url = `${url}/api/${controller}`;
@@ -24,7 +26,12 @@ export abstract class BaseService {
 		} catch (exception: unknown) {
 			if (exception instanceof HttpErrorResponse) {
 				exception.error.errors.forEach((value: string) => {
-					this.messageService.add({ severity: 'error', summary: 'API Error', detail: value, life: 2000 });
+					this.messageService.add({
+						severity: 'error',
+						summary: this.translateService.instant('toast.error'),
+						detail: value,
+						life: 2000
+					});
 				});
 			}
 			throw exception;

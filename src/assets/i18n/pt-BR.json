@@ -1,18 +1,43 @@
 {
 	"title": {
-		"home": "Home"
+		"home": "Home",
+    "contact": "Contato",
+    "business": "Empresa",
+    "support": "Suporte"
 	},
 	"layout": {
 		"menu": {
-			"create": "Criar",
-			"search": "Buscar",
-			"gallery": "Galeria"
+      "home": "Home",
+      "contact": "Contato",
+      "business": "Empresa",
+      "support": "Suporte"
 		},
-		"actions": {
-			"logout": "Sair"
-		}
+    "actions": {
+      "logout": "Sair",
+      "click-to-enter": "Click para se autenticar"
+    },
+    "guest-user": "Usuário Convidado",
+    "gu": "UC"
 	},
+  "contact": {
+    "name": "Nome",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "summary": "Assunto",
+    "message": "Mensagem",
+    "send": "Send",
+    "send-us-a-message": "Envie uma mensagem",
+    "other-actions": "Outras ações",
+    "support-email": "E-mail de suporte",
+    "whatsapp": "Whatsapp",
+    "discord": "Discord",
+    "success-message": "Mensagem enviada com sucesso!"
+  },
 	"confirmation": {
 		"update-app": "Uma nova versão está disponível. Gostaria de atualizar?"
-	}
+	},
+  "toast": {
+    "error": "Erro",
+    "success": "Sucesso"
+  }
 }

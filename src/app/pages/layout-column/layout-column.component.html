@@ -1,0 +1,33 @@
+<p-menubar [model]="items">
+  <ng-template #start>
+    <img class="logo" src="assets/svgs/logo_dark.svg" alt="logo" />
+  </ng-template>
+  <ng-template #end>
+    <div class="flex items-center gap-2">
+      <input type="text" pInputText placeholder="Search" class="w-36" />
+    </div>
+  </ng-template>
+</p-menubar>
+
+<div class="layout-main">
+  <router-outlet />
+  <footer class="footer">
+    <div class="content">
+      <div class="main-actions">
+        <h3>BVS Tecnologia Ltda</h3>
+        <div class="actions">
+          <a href="https://wa.me/5519989925642">
+            <p-button icon="pi pi-whatsapp" rounded outlined/>
+          </a>
+          <a href="https://discord.com/invite/gH7VFUs4R3">
+            <p-button icon="pi pi-discord" rounded outlined severity="info"/>
+          </a>
+          <a href="https://www.instagram.com/bvsilvaltda">
+            <p-button icon="pi pi-instagram" rounded outlined severity="secondary"/>
+          </a>
+        </div>
+      </div>
+      <span class="caption">©{{date.getFullYear()}} Todos os direitos reservados. BVS Tecnologia ltda</span>
+    </div>
+  </footer>
+</div>

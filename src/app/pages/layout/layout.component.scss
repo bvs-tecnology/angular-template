@@ -1,16 +1,16 @@
+@use '../../../assets/sass/common';
+
 :host {
-	width: -webkit-fill-available;
-	max-height: -webkit-fill-available;
+  @include common.fill-available;
 	height: 100vh;
 	&.main-layout {
-		display: flex;
+		@include common.display-flex-row;
 	}
 }
 
 .layout-sidebar {
 	height: 100%;
-	display: flex;
-	flex-direction: column;
+  @include common.display-flex-column;
 
 	.spacer {
 		flex: 1 1 auto;
@@ -21,8 +21,8 @@
 	}
 
 	.layout-sidebar__header {
-		width: -webkit-fill-available;
-		display: flex;
+    @include common.fill-available-width;
+    @include common.display-flex-row;
 		align-items: start;
 		justify-content: space-between;
 		padding: 0.4rem;
@@ -63,7 +63,36 @@
 }
 
 .layout-main {
-	width: -webkit-fill-available;
-	height: -webkit-fill-available;
+  @include common.fill-available;
 	background: #1e1e1e;
+}
+
+@media (max-width: common.$tablet) {}
+
+@media (max-width: 500px) {
+  :host {
+    &.main-layout {
+      @include common.display-flex-column;
+    }
+  }
+
+  .layout-sidebar {
+    &--closed {
+      @include common.display-flex-row;
+      height: 61px;
+
+      .layout-sidebar__menu {
+        display: none;
+      }
+
+      .divider {
+        display: none;
+      }
+    }
+
+  }
+
+  .sidebar-open {
+    display: none;
+  }
 }
